@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Screen.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <ScreenDelegate>
+
+@property (strong) Screen *screen;
+@property (strong) NSString *fileName;
 
 @end

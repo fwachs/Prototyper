@@ -16,13 +16,22 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    ViewController *viewController;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        viewController.fileName = @"res/screen-cfgs/main-screen-cfg.xml";
     } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+        viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+        viewController.fileName = @"res/screen-cfgs/main-screen-cfg.xml";
     }
-    self.window.rootViewController = self.viewController;
+    
+    self.navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    
     return YES;
 }
 

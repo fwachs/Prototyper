@@ -19,6 +19,7 @@
 		054855E1164999BC0098ECAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054855E0164999BC0098ECAE /* ViewController.m */; };
 		054855E4164999BC0098ECAE /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054855E2164999BC0098ECAE /* ViewController_iPhone.xib */; };
 		054855E7164999BC0098ECAE /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054855E5164999BC0098ECAE /* ViewController_iPad.xib */; };
+		0548560F1650AD420098ECAE /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 0548560E1650AD420098ECAE /* Screen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		054855E0164999BC0098ECAE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		054855E3164999BC0098ECAE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		054855E6164999BC0098ECAE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		0548560D1650AD420098ECAE /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Screen.h; path = Framework/Screen.h; sourceTree = "<group>"; };
+		0548560E1650AD420098ECAE /* Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Screen.m; path = Framework/Screen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 		054855CD164999BC0098ECAE /* Prototyper */ = {
 			isa = PBXGroup;
 			children = (
+				0548560C1650AD330098ECAE /* Framework */,
 				054855D6164999BC0098ECAE /* AppDelegate.h */,
 				054855D7164999BC0098ECAE /* AppDelegate.m */,
 				054855DF164999BC0098ECAE /* ViewController.h */,
@@ -108,6 +112,15 @@
 				054855DD164999BC0098ECAE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0548560C1650AD330098ECAE /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				0548560D1650AD420098ECAE /* Screen.h */,
+				0548560E1650AD420098ECAE /* Screen.m */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +193,7 @@
 				054855D4164999BC0098ECAE /* main.m in Sources */,
 				054855D8164999BC0098ECAE /* AppDelegate.m in Sources */,
 				054855E1164999BC0098ECAE /* ViewController.m in Sources */,
+				0548560F1650AD420098ECAE /* Screen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +282,13 @@
 		054855EB164999BC0098ECAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Federico Wachs (YZ46QL2EQ5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Prototyper/Prototyper-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Prototyper/Prototyper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E7D790DA-E2D7-4070-A010-27C36032B0A9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -279,10 +296,13 @@
 		054855EC164999BC0098ECAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Federico Wachs (YZ46QL2EQ5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Prototyper/Prototyper-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Prototyper/Prototyper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E7D790DA-E2D7-4070-A010-27C36032B0A9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -306,6 +326,7 @@
 				054855EC164999BC0098ECAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
