@@ -17,6 +17,7 @@
     if(self) {
         elementStack = [NSMutableArray array];
         [elementStack addObject:viewToLoad];
+        view = viewToLoad;
         
         elements = [NSMutableDictionary dictionary];
         events = [NSMutableArray array];
@@ -92,10 +93,10 @@
     screenSize.height = rootView.frame.size.width;
     screenSize.width = rootView.frame.size.height;
     
-    float xScale = screenSize.width / 400.0;
-    float yScale = screenSize.height / 640.0;
+    float xScale = screenSize.width / 800.0;
+    float yScale = screenSize.height / 1280.0;
     
-    CGRect tRect = CGRectMake(rect.origin.x * yScale / 2, rect.origin.y * xScale / 2, rect.size.width * yScale, rect.size.height * xScale);
+    CGRect tRect = CGRectMake(rect.origin.x * yScale, rect.origin.y * xScale, rect.size.width * yScale, rect.size.height * xScale);
     
     return tRect;
 }
@@ -103,54 +104,139 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI
         qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
+    NSLog(@"Begin element %@", attributeDict);
+    
     if([elementName isEqualToString:@"screen:element"] == YES) {
-        NSString *fileName = [NSString stringWithFormat:@"res/images/%@", [attributeDict valueForKey:@"resource"]];
+        NSString *resource = [attributeDict valueForKey:@"resource"];
+        NSString *fileName = [NSString stringWithFormat:@"res/images/%@", resource];
         
         UIView *parentView = [elementStack lastObject];
-        UIImage *image = [UIImage imageWithData:[self loadFileAtPath:fileName]];
-        CGSize imageSize = image.size;
         
-        UIView *subView = Nil;
         
-        NSString *ontap = [attributeDict valueForKey:@"ontap"];
-        if(ontap && [ontap isEqualToString:@""] == NO) {
-            UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
-            [but addTarget:self action:@selector(elementTapped:) forControlEvents:UIControlEventTouchUpInside];
-            [but setImage:image forState:UIControlStateNormal];
-            
-            [events addObject:ontap];
-            but.tag = [events count] + 1;
-            subView = but;
+        UIImage *image = Nil;
+        CGSize imageSize;
+        
+        if([resource length] > 0) {
+            image = [UIImage imageWithData:[self loadFileAtPath:fileName]];
+            imageSize = image.size;
         }
         else {
-            subView = [[UIImageView alloc] initWithImage:image];
-        }
-        subView.contentMode = UIViewContentModeScaleToFill;
+            NSString *swidth = [attributeDict valueForKey:@"width"];
+            if(swidth) {
+                imageSize.width = [swidth floatValue];
+            }
+            else {
+                imageSize.width = parentView.frame.size.width;
+            }
 
-        CGRect frame = subView.frame;
+            NSString *sheight = [attributeDict valueForKey:@"height"];
+            if(sheight) {
+                imageSize.height = [sheight floatValue];
+            }
+            else {
+                imageSize.height = parentView.frame.size.height;
+            }
+        }
         
+        CGRect frame;        
         CGPoint pos = CGPointMake([[attributeDict valueForKey:@"left"] floatValue], [[attributeDict valueForKey:@"top"] floatValue]);
         frame.origin = pos;
-        
         frame.size = imageSize;
         
-        subView.frame = [self translateRect:frame];
-        
+        UIView *newView = [[UIView alloc] initWithFrame:frame];
+        newView.backgroundColor = [UIColor clearColor];
+        newView.frame = [self translateRect:frame];
+
+        [parentView addSubview:newView];
+        [elementStack addObject:newView];
+
         NSString *visible = [attributeDict valueForKey:@"visible"];
         if(visible && [[visible lowercaseString] isEqualToString:@"no"]) {
-            subView.hidden = YES;
+            newView.hidden = YES;
         }
         
-        [elements setValue:subView forKey:[attributeDict valueForKey:@"name"]];
+        [elements setValue:newView forKey:[attributeDict valueForKey:@"name"]];
+        lastAttributes = attributeDict;
+        
+        
+        if(image) {
+            UIView *subView = Nil;
 
-        [parentView addSubview:subView];
-        [elementStack addObject:subView];
+            NSString *ontap = [attributeDict valueForKey:@"ontap"];
+            if(ontap && [ontap isEqualToString:@""] == NO) {
+                UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
+                [but addTarget:self action:@selector(elementTapped:) forControlEvents:UIControlEventTouchUpInside];
+                [but setImage:image forState:UIControlStateNormal];
+                
+                [events addObject:ontap];
+                but.tag = [events count];
+                subView = but;
+            }
+            else {
+                subView = [[UIImageView alloc] initWithImage:image];
+            }
+            
+            subView.frame = newView.bounds;
+            subView.contentMode = UIViewContentModeScaleToFill;
+            
+            [newView addSubview:subView];
+        }
     }
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
+    NSLog(@"Text %@", string);
+    
+    NSString *text = [string stringByReplacingOccurrencesOfString:@"\t" withString:@""];
+    if([text length] == 0) return;
+    
+    UIView *parentView = [elementStack lastObject];
+
+    UILabel *label = [[UILabel alloc] initWithFrame:parentView.bounds];
+    
+    NSString *fontName = @"ArialMT";
+    NSString *fontStyle = [lastAttributes valueForKey:@"font-style"];
+    if([fontStyle isEqualToString:@"bold"]) {
+        fontName = @"Arial-BoldMT";
+    }
+    else if([fontStyle isEqualToString:@"italic"]) {
+        fontName = @"Arial-ItalicMT";
+    }
+    
+    float fontSize = 14.0f;
+    NSString *size = [lastAttributes valueForKey:@"font-size"];
+    if(size) {
+        fontSize = [size floatValue];
+    }
+    
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setTextColor:[UIColor blackColor]];
+    [label setFont:[UIFont fontWithName:fontName size:fontSize]];
+    [label setText:text];
+    
+    NSString *align = [lastAttributes valueForKey:@"text-align"];
+    if(align) {
+        if([align isEqualToString:@"right"]) {
+            [label setTextAlignment:NSTextAlignmentRight];
+        }
+        else if([align isEqualToString:@"center"]) {
+            [label setTextAlignment:NSTextAlignmentCenter];
+        }
+        else {
+            [label setTextAlignment:NSTextAlignmentLeft];
+        }
+    }
+    
+    [parentView addSubview:label];
+    
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
         namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+    NSLog(@"End element");
+    
     [elementStack removeLastObject];
 }
 

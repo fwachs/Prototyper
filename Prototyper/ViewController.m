@@ -52,11 +52,16 @@
     
     if([comps count] < 2) return;
     
-    ViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
-    vc.fileName = [NSString stringWithFormat:@"res/screen-cfgs/%@", [comps objectAtIndex:1]];
+    if([[comps objectAtIndex:1] isEqualToString:@"back"]) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else {
+        ViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        vc.fileName = [NSString stringWithFormat:@"res/screen-cfgs/%@", [comps objectAtIndex:1]];
 
-    [self.navigationController pushViewController:vc animated:YES];
-
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
     /*
     if([[comps objectAtIndex:0] isEqualToString:@"modal"]) {
         

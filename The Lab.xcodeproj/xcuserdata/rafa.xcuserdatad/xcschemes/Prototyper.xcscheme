@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "054855C2164999BC0098ECAE"
-               BuildableName = "Prototyper.app"
-               BlueprintName = "Prototyper"
-               ReferencedContainer = "container:Prototyper.xcodeproj">
+               BuildableName = "The Lab.app"
+               BlueprintName = "The Lab"
+               ReferencedContainer = "container:The Lab.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "054855C2164999BC0098ECAE"
-            BuildableName = "Prototyper.app"
-            BlueprintName = "Prototyper"
-            ReferencedContainer = "container:Prototyper.xcodeproj">
+            BuildableName = "The Lab.app"
+            BlueprintName = "The Lab"
+            ReferencedContainer = "container:The Lab.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "054855C2164999BC0098ECAE"
-            BuildableName = "Prototyper.app"
-            BlueprintName = "Prototyper"
-            ReferencedContainer = "container:Prototyper.xcodeproj">
+            BuildableName = "The Lab.app"
+            BlueprintName = "The Lab"
+            ReferencedContainer = "container:The Lab.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "054855C2164999BC0098ECAE"
-            BuildableName = "Prototyper.app"
-            BlueprintName = "Prototyper"
-            ReferencedContainer = "container:Prototyper.xcodeproj">
+            BuildableName = "The Lab.app"
+            BlueprintName = "The Lab"
+            ReferencedContainer = "container:The Lab.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -20,17 +20,18 @@
 		054855E4164999BC0098ECAE /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054855E2164999BC0098ECAE /* ViewController_iPhone.xib */; };
 		054855E7164999BC0098ECAE /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054855E5164999BC0098ECAE /* ViewController_iPad.xib */; };
 		0548560F1650AD420098ECAE /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 0548560E1650AD420098ECAE /* Screen.m */; };
+		055A5F1F165B4C4E0066AB10 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 055A5F1E165B4C4E0066AB10 /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		054855C3164999BC0098ECAE /* Prototyper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prototyper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		054855C3164999BC0098ECAE /* The Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		054855C7164999BC0098ECAE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		054855C9164999BC0098ECAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		054855CB164999BC0098ECAE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		054855CF164999BC0098ECAE /* Prototyper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Prototyper-Info.plist"; sourceTree = "<group>"; };
+		054855CF164999BC0098ECAE /* The Lab-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "The Lab-Info.plist"; sourceTree = "<group>"; };
 		054855D1164999BC0098ECAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		054855D3164999BC0098ECAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		054855D5164999BC0098ECAE /* Prototyper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prototyper-Prefix.pch"; sourceTree = "<group>"; };
+		054855D5164999BC0098ECAE /* The Lab-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Lab-Prefix.pch"; sourceTree = "<group>"; };
 		054855D6164999BC0098ECAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		054855D7164999BC0098ECAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		054855D9164999BC0098ECAE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		054855E6164999BC0098ECAE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		0548560D1650AD420098ECAE /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Screen.h; path = Framework/Screen.h; sourceTree = "<group>"; };
 		0548560E1650AD420098ECAE /* Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Screen.m; path = Framework/Screen.m; sourceTree = "<group>"; };
+		055A5F1E165B4C4E0066AB10 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,7 @@
 		054855B8164999BC0098ECAE = {
 			isa = PBXGroup;
 			children = (
-				054855CD164999BC0098ECAE /* Prototyper */,
+				054855CD164999BC0098ECAE /* The Lab */,
 				054855C6164999BC0098ECAE /* Frameworks */,
 				054855C4164999BC0098ECAE /* Products */,
 			);
@@ -70,7 +72,7 @@
 		054855C4164999BC0098ECAE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				054855C3164999BC0098ECAE /* Prototyper.app */,
+				054855C3164999BC0098ECAE /* The Lab.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,7 +87,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		054855CD164999BC0098ECAE /* Prototyper */ = {
+		054855CD164999BC0098ECAE /* The Lab */ = {
 			isa = PBXGroup;
 			children = (
 				0548560C1650AD330098ECAE /* Framework */,
@@ -97,16 +99,18 @@
 				054855E5164999BC0098ECAE /* ViewController_iPad.xib */,
 				054855CE164999BC0098ECAE /* Supporting Files */,
 			);
+			name = "The Lab";
 			path = Prototyper;
 			sourceTree = "<group>";
 		};
 		054855CE164999BC0098ECAE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				054855CF164999BC0098ECAE /* Prototyper-Info.plist */,
+				055A5F1E165B4C4E0066AB10 /* Icon.png */,
+				054855CF164999BC0098ECAE /* The Lab-Info.plist */,
 				054855D0164999BC0098ECAE /* InfoPlist.strings */,
 				054855D3164999BC0098ECAE /* main.m */,
-				054855D5164999BC0098ECAE /* Prototyper-Prefix.pch */,
+				054855D5164999BC0098ECAE /* The Lab-Prefix.pch */,
 				054855D9164999BC0098ECAE /* Default.png */,
 				054855DB164999BC0098ECAE /* Default@2x.png */,
 				054855DD164999BC0098ECAE /* Default-568h@2x.png */,
@@ -126,9 +130,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		054855C2164999BC0098ECAE /* Prototyper */ = {
+		054855C2164999BC0098ECAE /* The Lab */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 054855EA164999BC0098ECAE /* Build configuration list for PBXNativeTarget "Prototyper" */;
+			buildConfigurationList = 054855EA164999BC0098ECAE /* Build configuration list for PBXNativeTarget "The Lab" */;
 			buildPhases = (
 				054855BF164999BC0098ECAE /* Sources */,
 				054855C0164999BC0098ECAE /* Frameworks */,
@@ -138,9 +142,9 @@
 			);
 			dependencies = (
 			);
-			name = Prototyper;
+			name = "The Lab";
 			productName = Prototyper;
-			productReference = 054855C3164999BC0098ECAE /* Prototyper.app */;
+			productReference = 054855C3164999BC0098ECAE /* The Lab.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,7 +156,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = 2clams;
 			};
-			buildConfigurationList = 054855BD164999BC0098ECAE /* Build configuration list for PBXProject "Prototyper" */;
+			buildConfigurationList = 054855BD164999BC0098ECAE /* Build configuration list for PBXProject "The Lab" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -164,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				054855C2164999BC0098ECAE /* Prototyper */,
+				054855C2164999BC0098ECAE /* The Lab */,
 			);
 		};
 /* End PBXProject section */
@@ -180,6 +184,7 @@
 				054855DE164999BC0098ECAE /* Default-568h@2x.png in Resources */,
 				054855E4164999BC0098ECAE /* ViewController_iPhone.xib in Resources */,
 				054855E7164999BC0098ECAE /* ViewController_iPad.xib in Resources */,
+				055A5F1F165B4C4E0066AB10 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,10 +289,11 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Federico Wachs (YZ46QL2EQ5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Prototyper/Prototyper-Prefix.pch";
+				GCC_PREFIX_HEADER = "Prototyper/The Lab-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Prototyper/Prototyper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Prototyper/The Lab-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "The Lab";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E7D790DA-E2D7-4070-A010-27C36032B0A9";
 				WRAPPER_EXTENSION = app;
 			};
@@ -298,10 +304,11 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Federico Wachs (YZ46QL2EQ5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Prototyper/Prototyper-Prefix.pch";
+				GCC_PREFIX_HEADER = "Prototyper/The Lab-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Prototyper/Prototyper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Prototyper/The Lab-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "The Lab";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E7D790DA-E2D7-4070-A010-27C36032B0A9";
 				WRAPPER_EXTENSION = app;
 			};
@@ -310,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		054855BD164999BC0098ECAE /* Build configuration list for PBXProject "Prototyper" */ = {
+		054855BD164999BC0098ECAE /* Build configuration list for PBXProject "The Lab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				054855E8164999BC0098ECAE /* Debug */,
@@ -319,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		054855EA164999BC0098ECAE /* Build configuration list for PBXNativeTarget "Prototyper" */ = {
+		054855EA164999BC0098ECAE /* Build configuration list for PBXNativeTarget "The Lab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				054855EB164999BC0098ECAE /* Debug */,

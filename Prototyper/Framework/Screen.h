@@ -19,6 +19,8 @@
     NSMutableArray *elementStack;
     NSMutableDictionary *elements;
     NSMutableArray *events;
+    NSDictionary *lastAttributes;
+    UIView *view;
 }
 
 @property (assign) id <ScreenDelegate> delegate;
